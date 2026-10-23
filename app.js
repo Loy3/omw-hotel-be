@@ -1,11 +1,19 @@
+const cors = require('cors');
 const express = require('express');
 const config = require("./config");
 const bodyParser = require("body-parser");
 const path = require('path');
 const userRouter = require("./router/userRouter");
 
+
+
 const app = express();
 const PORT = config.port;
+
+app.use(cors({
+  origin: config.site,
+  credentials: true
+}));
 
 // Middleware to parse incoming JSON payloads
 app.use(express.json());

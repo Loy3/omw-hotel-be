@@ -29,7 +29,8 @@ export const user_image = [
             // req.file.filename contains the final saved name (with Date.now() prefix)
             return res.status(200).json({
                 message: 'Image uploaded successfully',
-                imageName: req.file.filename
+                imageName: req.file.filename, 
+                imgStatus: true
             });
         } catch (error) {
             console.error(error);
